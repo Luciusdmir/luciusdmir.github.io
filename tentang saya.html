@@ -1,232 +1,509 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <title>Tentang Saya</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tentang Saya - Website Tania</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<style>
+
+    <style>
+        /* ===== COTTON CANDY THEME ===== */
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: darkgrey;
             margin: 0;
-            padding: 30px 10px;
-            color: #333333;
+            padding: 40px 15px;
+            color: #655675;
+
+            background:
+                radial-gradient(circle at 10% 15%,
+                    rgba(255,255,255,0.9), transparent 25%),
+                radial-gradient(circle at 90% 20%,
+                    rgba(255,190,220,0.8), transparent 30%),
+                radial-gradient(circle at 20% 90%,
+                    rgba(173,220,255,0.8), transparent 30%),
+                linear-gradient(135deg,
+                    #f9d8eb, #d9eaff, #e8dcff);
+
+            background-attachment: fixed;
         }
+
+        /* ===== TABEL UTAMA ===== */
 
         table {
-            border-collapse: separate !important;
-            border-spacing: 0;
-            border: 1px solid #ccc !important;
-            border-radius: 15px !important;
-            overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3) !important;
-            background-color: white !important;
-            max-width: 800px;
             width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 2px solid rgba(255,255,255,0.9);
+            border-radius: 25px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.96);
+
+            box-shadow:
+                0 20px 50px rgba(140,112,180,0.25),
+                0 5px 15px rgba(255,255,255,0.8);
         }
 
-        td[bgcolor="060F8F"] {
-            background-color: #060F8F !important;
-            padding: 20px !important;
+        td {
+            border: none;
         }
-        
-        td[bgcolor="8FBBFF"] {
-            background-color: #8FBBFF !important;
-            padding: 12px 15px !important;
-            text-align: left;
+
+        /* ===== HEADER WEBSITE ===== */
+
+        .header {
+            padding: 45px 20px !important;
+            text-align: center;
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,137,190,0.88),
+                    rgba(161,183,255,0.88),
+                    rgba(195,160,255,0.88)
+                ),
+                url("images/jaring-teal.svg");
+
+            background-size: cover;
+            background-position: center;
         }
-        
-        td[bgcolor="8FBBFF"] a {
+
+        .header h1 {
+            margin: 0;
+            font-size: clamp(32px, 6vw, 52px);
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: white;
+
+            text-shadow:
+                0 2px 0 #e7a8d1,
+                0 5px 0 rgba(177,119,200,0.65),
+                0 8px 15px rgba(95,63,130,0.55),
+                0 0 25px rgba(255,255,255,0.9);
+        }
+
+        .header h1::before {
+            content: "✧ ";
+            color: #fff4bd;
+        }
+
+        .header h1::after {
+            content: " ✧";
+            color: #fff4bd;
+        }
+
+        .header p {
+            margin: 15px 0 0;
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: white;
+            text-shadow: 0 2px 6px rgba(92,65,120,0.65);
+        }
+
+        .decoration {
+            margin-top: 18px;
+            font-size: 22px;
+            letter-spacing: 12px;
+            text-shadow: 0 2px 8px rgba(92,65,120,0.3);
+        }
+
+        /* ===== MENU NAVIGASI ===== */
+
+        .navigation {
+            padding: 18px 15px !important;
+            text-align: center;
+
+            background: linear-gradient(
+                90deg, #ffcce5, #d8d7ff, #c9edff
+            );
+
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+
+        .navigation a {
             display: inline-block;
-            background-color: #ffffff;
-            color: #060F8F !important;
+            margin: 5px 4px;
+            padding: 10px 18px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.92);
+            color: #8b68a9;
             text-decoration: none;
-            font-weight: bold;
             font-size: 14px;
-            padding: 6px 16px;
-            margin: 0 3px;
-            border-radius: 20px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 
-                        inset 0 1px 1px rgba(255, 255, 255, 0.9);
-            transition: all 0.2s ease;
+            font-weight: bold;
+
+            box-shadow: 0 4px 10px rgba(142,109,175,0.15);
+            transition: all 0.3s ease;
         }
 
-        td[bgcolor="8FBBFF"] a: {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        .navigation a:hover {
+            color: white;
+            background: linear-gradient(
+                135deg, #ff91c8, #b5a3ff
+            );
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(167,116,200,0.35);
         }
 
-        td[width="75%"] {
-            padding: 25px !important;
-            background-color: white !important;
+        /* ===== KONTEN UTAMA ===== */
+
+        .content {
+            width: 72%;
+            padding: 30px !important;
+            vertical-align: top;
+            background: #fffdfd;
         }
 
-        td[width="75%"] h3 {
+        .page-title {
+            text-align: center;
+            color: #a66eb3;
+            font-size: 28px;
             margin-top: 0;
-            color: #1a202c;
+            margin-bottom: 10px;
+
+            text-shadow: 0 3px 8px rgba(202,158,224,0.3);
         }
 
-        td[width="75%"] a {
-            color: #0000ee;
+        .date {
+            text-align: right;
+            color: #a49bb8;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: #a66eb3;
+            font-size: 21px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* ===== KARTU DATA DIRI ===== */
+
+        .profile-card {
+            padding: 22px;
+            margin-bottom: 25px;
+            border-radius: 20px;
+
+            background: linear-gradient(
+                135deg, #fff0f8, #f0edff, #eaf8ff
+            );
+
+            border: 1px solid #f1d9f3;
+
+            box-shadow: 0 6px 18px rgba(172,139,193,0.15);
+        }
+
+        .profile-card ul {
+            padding-left: 25px;
+            margin-bottom: 0;
+        }
+
+        .profile-card li {
+            margin-bottom: 14px;
+            line-height: 1.8;
+        }
+
+        .profile-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .label {
+            color: #9769ae;
+            font-weight: bold;
+        }
+
+        /* ===== HOBI DAN MAKANAN ===== */
+
+        .interest-card {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 18px;
+            background: white;
+            border: 1px solid #f0def5;
+            box-shadow: 0 5px 15px rgba(172,139,193,0.12);
+        }
+
+        .interest-card h3 {
+            color: #a66eb3;
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        .interest-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .interest-list li {
+            padding: 9px 14px;
+            border-radius: 25px;
+            background: linear-gradient(
+                135deg, #ffe0ef, #e6e0ff, #dff4ff
+            );
+            color: #816795;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* ===== SIDEBAR ===== */
+
+        .sidebar {
+            width: 28%;
+            padding: 25px 20px !important;
+            vertical-align: top;
+
+            background: linear-gradient(
+                180deg, #f2e8ff, #e4f5ff, #ffe8f4
+            );
+
+            border-left: 2px solid #f5d9f0;
+        }
+
+        .sidebar h3 {
+            color: #9b76ba;
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        .sidebar p {
+            color: #8f79a9;
+            line-height: 1.8;
+        }
+
+        .sidebar ol {
+            padding-left: 22px;
+            line-height: 2.4;
+        }
+
+        .sidebar li {
+            padding-left: 3px;
+        }
+
+        .sidebar a {
+            color: #8d78b7;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .sidebar a:hover {
+            color: #ef80b7;
             text-decoration: underline;
         }
 
-        td[bgcolor="lightgrey"] {
-            background-color: lightgrey !important;
+        .sidebar hr {
+            border: none;
+            height: 2px;
+            margin: 25px 0;
+
+            background: linear-gradient(
+                90deg, #ffcce5, #c7bdff, #bdeaff
+            );
+        }
+
+        /* ===== FOOTER ===== */
+
+        .footer {
             padding: 20px !important;
-            border-left: 1px solid #ccc !important;
+            text-align: center;
+            color: #8c78a6;
+            font-size: 13px;
+
+            background: linear-gradient(
+                90deg, #ffd8eb, #e4ddff, #d4f1ff
+            );
+
+            border-top: 2px solid white;
         }
 
-        td[bgcolor="lightgrey"] p {
-            font-weight: bold;
-            margin-top: 0;
-        }
-
-        tr:last-child td  {
-            background-color: <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: darkgrey;
+        .footer p {
             margin: 0;
-            padding: 30px 10px;
-            color: #333333;
         }
 
-        table {
-            border-collapse: separate !important;
-            border-spacing: 0;
-            border: 1px solid #ccc !important;
-            border-radius: 15px !important;
-            overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3) !important;
-            background-color: white !important;
-            max-width: 800px;
-            width: 100%;
-        }
+        /* ===== TAMPILAN HP ===== */
 
-        td[bgcolor="060F8F"] {
-            background-color: #060F8F !important;
-            padding: 20px !important;
-        }
-        
-        td[bgcolor="8FBBFF"] {
-            background-color: #8FBBFF !important;
-            padding: 12px 15px !important;
-            text-align: left;
-        }
-        
-        td[bgcolor="8FBBFF"] a {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #060F8F !important;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            padding: 6px 16px;
-            margin: 0 3px;
-            border-radius: 20px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 
-                        inset 0 1px 1px rgba(255, 255, 255, 0.9);
-            transition: all 0.2s ease;
-        }
+        @media screen and (max-width: 600px) {
+            body {
+                padding: 15px 8px;
+            }
 
-        td[bgcolor="8FBBFF"] a: {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        }
+            table {
+                border-radius: 18px;
+            }
 
-        td[width="75%"] {
-            padding: 25px !important;
-            background-color: white !important;
-        }
+            .header {
+                padding: 35px 12px !important;
+            }
 
-        td[width="75%"] h3 {
-            margin-top: 0;
-            color: #1a202c;
-        }
+            .header h1 {
+                letter-spacing: 1px;
+            }
 
-        td[width="75%"] a {
-            color: #0000ee;
-            text-decoration: underline;
-        }
+            .header p {
+                font-size: 13px;
+                letter-spacing: 1px;
+            }
 
-        td[bgcolor="lightgrey"] {
-            background-color: lightgrey !important;
-            padding: 20px !important;
-            border-left: 1px solid #ccc !important;
-        }
+            .navigation {
+                padding: 12px 8px !important;
+            }
 
-        td[bgcolor="lightgrey"] p {
-            font-weight: bold;
-            margin-top: 0;
-        }
+            .navigation a {
+                padding: 9px 12px;
+                font-size: 12px;
+            }
 
-        tr:last-child td  {
-            background-color: BFDDE3 !important;
-            padding: 12px 15px !important;
-        }
-    </style> !important;
-            padding: 12px 15px !important;
+            .content,
+            .sidebar {
+                display: block;
+                width: 100%;
+                padding: 22px !important;
+            }
+
+            .sidebar {
+                border-left: none;
+                border-top: 2px solid #f5d9f0;
+            }
+
+            .page-title {
+                font-size: 24px;
+            }
         }
     </style>
-<body bgcolor="darkgrey" background="images/background.svg">
-    <!-- Halaman web tanpa CSS. Murni hanya memakai HTML -->
-    <p>&nbsp;</p>
-    <table border="1" width="800px" cellpadding="12px" align="center" bgcolor="white">
-        <tr>
-            <td colspan="2" align="center" bgcolor="72A8BA" background="images/jaring-teal.svg">
-                <font color="white">
-                    <p>&nbsp;</p>
-                    <h1>Website Tania</h1>
-                    <p><em>Tania is here to help you!</em></p>
-                    <p>&nbsp;</p>
-                </font>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" bgcolor="A4CEDE">
-                <a href="index.html">Beranda</a> |
-                <a href="tentang saya.html">Tentang Saya</a> |
-                <a href="kegiatan.html">Kegiatan</a> |
-                <a href="kontak saya.html">Kontak saya</a> |
-            </td>
-        </tr>
-        <tr>
-            <td width="75%">
-                <!-- Content utama -->
+</head>
 
-               <h3 align="center">Tentang Saya</h3>
-                <p align="right"><small><em>Minggu, 27 september 2026</em></small></p>
-                <h3 align="left">Data diri</h3>
-                 </p>
-                <ul>
-                    <li>Nama saya: Arianna Nathania Christine
-                    <li>Kelas: XI DKV 2</li>
-                    <li>Hobi: Menggambar, Mendengarkan lagu, Menonton</li>
-                </ul>
-                <p><strong>Makanan kesukaan saya</strong></p>
-                <ul>
-                    <li>Mie goreng
-                    <li>Ayam goreng</li>
-                    <li>Lele goreng</li>
-              
-                <!-- Akhir dari content utama -->
-            </td>
-            <td width="25%" valign="top" bgcolor="BFDDE3">
-                <p>Tautan eksternal</p>
-                <ol>
-                    <li><a href="https://www.smkn1-tng.sch.id/">Website sekolah</a></li>
-                    <li><a href="https://www.wikipedia.org">Wikipedia</a></li>
-                </ol>
+<body>
+
+    <table>
+        <!-- HEADER -->
+        <tr>
+            <td colspan="2" class="header">
+                <h1>Website Tania</h1>
+               <p><em>♡ Tania is here to help! ♡</em> </p>
+                <div class="decoration">☁ ✧ ♡ ✧ ☁</div>
             </td>
         </tr>
+
+        <!-- NAVIGASI -->
         <tr>
-            <td colspan="2" align="right" bgcolor="A4CEDE">
-                <font color="white"><small>&copy; Copyright Arianna Nc, 2026.</small></font>
+            <td colspan="2" class="navigation">
+                <a href="index.html">⌂ Beranda</a>
+                <a href="tentang saya.html">♡ Tentang Saya</a>
+                <a href="kegiatan.html">✿ Kegiatan</a>
+                <a href="kontak saya.html">✉ Kontak Saya</a>
+            </td>
+        </tr>
+
+        <!-- KONTEN TENTANG SAYA -->
+        <tr>
+            <td class="content">
+
+                <h2 class="page-title">♡ Tentang Saya ♡</h2>
+
+                <p class="date">
+                    <small><em>Minggu, 27 September 2026</em></small>
+                </p>
+
+                <!-- DATA DIRI -->
+                <h3 class="section-title">୨୧ Data Diri</h3>
+
+                <div class="profile-card">
+                    <ul>
+                        <li>
+                            <span class="label">Nama saya:</span>
+                            Arianna Nathania Christine
+                        </li>
+
+                        <li>
+                            <span class="label">Kelas:</span>
+                            XI DKV 2
+                        </li>
+
+                        <li>
+                            <span class="label">Hobi:</span>
+                            Menggambar, mendengarkan lagu, dan menonton
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- HOBI -->
+                <div class="interest-card">
+                    <h3>♡ Hobi Saya</h3>
+
+                    <ul class="interest-list">
+                        <li>🎨 Menggambar</li>
+                        <li>🎧 Mendengarkan Lagu</li>
+                        <li>🎬 Menonton</li>
+                    </ul>
+                </div>
+
+                <!-- MAKANAN KESUKAAN -->
+                <div class="interest-card">
+                    <h3>୨୧ Makanan Kesukaan Saya</h3>
+
+                    <ul class="interest-list">
+                        <li>🍜 Mi Goreng</li>
+                        <li>🍗 Ayam Goreng</li>
+                        <li>🐟 Lele Goreng</li>
+                    </ul>
+                </div>
+
+            </td>
+
+            <!-- SIDEBAR -->
+            <td class="sidebar">
+                <h3>♡ Tautan Eksternal</h3>
+
+                <p>Jelajahi tautan berikut!</p>
+
+                <ol>
+                    <li>
+                        <a href="https://www.smkn1-tng.sch.id/"
+                           target="_blank" rel="noopener noreferrer">
+                            Website Sekolah
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.wikipedia.org"
+                           target="_blank" rel="noopener noreferrer">
+                            Wikipedia
+                        </a>
+                    </li>
+                </ol>
+
+                <hr>
+
+                <h3>☁ Cotton Candy</h3>
+
+                <p>
+                    Sweet colors, happy days, and lovely vibes! ♡
+                </p>
+            </td>
+        </tr>
+
+        <!-- FOOTER -->
+        <tr>
+            <td colspan="2" class="footer">
+                <p>
+                    ♡ &copy; Copyright Arianna Nc, 2026.
+                    Made with love by Tania ♡
+                </p>
             </td>
         </tr>
     </table>
-    <p>&nbsp;</p>
-</body>
 
+</body>
 </html>
