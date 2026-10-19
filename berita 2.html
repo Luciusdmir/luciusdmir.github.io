@@ -1,199 +1,337 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <title>Tentang Saya</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kegiatan - Website Tania</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<style>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: darkgrey;
             margin: 0;
-            padding: 30px 10px;
-            color: #333333;
+            padding: 40px 15px;
+            color: #51465b;
+            background:
+                radial-gradient(circle at top left, rgba(255,255,255,0.7), transparent 35%),
+                linear-gradient(135deg, #f9d8eb, #d9eaff, #e8dcff);
+            background-attachment: fixed;
         }
 
         table {
-            border-collapse: separate !important;
+            border-collapse: separate;
             border-spacing: 0;
-            border: 1px solid #ccc !important;
-            border-radius: 15px !important;
+            border: none;
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3) !important;
-            background-color: white !important;
-            max-width: 800px;
+            box-shadow: 0 12px 35px rgba(116, 93, 145, 0.2);
+            background-color: rgba(255, 255, 255, 0.95);
+            max-width: 900px;
             width: 100%;
+            margin: 0 auto;
         }
 
-        td[bgcolor="060F8F"] {
-            background-color: #060F8F !important;
-            padding: 20px !important;
-        }
-        
-        td[bgcolor="8FBBFF"] {
-            background-color: #8FBBFF !important;
-            padding: 12px 15px !important;
-            text-align: left;
-        }
-        
-        td[bgcolor="8FBBFF"] a {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #060F8F !important;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            padding: 6px 16px;
-            margin: 0 3px;
-            border-radius: 20px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 
-                        inset 0 1px 1px rgba(255, 255, 255, 0.9);
-            transition: all 0.2s ease;
+        .header {
+            padding: 45px 20px;
+            text-align: center;
+            color: white;
+            background:
+                linear-gradient(135deg, rgba(255,174,216,0.85),
+                rgba(180,190,255,0.85),
+                rgba(178,225,255,0.85)),
+                url("images/jaring-teal.svg");
+            background-size: cover;
+            background-position: center;
         }
 
-        td[bgcolor="8FBBFF"] a: {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        td[width="75%"] {
-            padding: 25px !important;
-            background-color: white !important;
-        }
-
-        td[width="75%"] h3 {
-            margin-top: 0;
-            color: #1a202c;
-        }
-
-        td[width="75%"] a {
-            color: #0000ee;
-            text-decoration: underline;
-        }
-
-        td[bgcolor="lightgrey"] {
-            background-color: lightgrey !important;
-            padding: 20px !important;
-            border-left: 1px solid #ccc !important;
-        }
-
-        td[bgcolor="lightgrey"] p {
-            font-weight: bold;
-            margin-top: 0;
-        }
-
-        tr:last-child td  {
-            background-color: <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: darkgrey;
+        .header h1 {
             margin: 0;
-            padding: 30px 10px;
-            color: #333333;
+            font-size: 38px;
+            letter-spacing: 2px;
+            text-shadow:
+                0 0 5px #ffffff,
+                0 0 10px #ffb6dc,
+                0 0 20px #d9baff,
+                2px 3px 5px rgba(95,76,125,0.3);
         }
 
-        table {
-            border-collapse: separate !important;
-            border-spacing: 0;
-            border: 1px solid #ccc !important;
-            border-radius: 15px !important;
-            overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3) !important;
-            background-color: white !important;
-            max-width: 800px;
-            width: 100%;
+        .header h1::before {
+            content: "✧ ";
         }
 
-        td[bgcolor="060F8F"] {
-            background-color: #060F8F !important;
-            padding: 20px !important;
+        .header h1::after {
+            content: " ✧";
         }
-        
-        td[bgcolor="8FBBFF"] {
-            background-color: #8FBBFF !important;
-            padding: 12px 15px !important;
-            text-align: left;
+
+        .header p {
+            margin-bottom: 0;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 4px rgba(90,70,120,0.4);
         }
-        
-        td[bgcolor="8FBBFF"] a {
+
+        .decoration {
+            margin-top: 15px;
+            color: #fff8ff;
+            letter-spacing: 8px;
+            font-size: 18px;
+        }
+
+        .navigation {
+            padding: 15px 10px;
+            text-align: center;
+            background: linear-gradient(90deg, #ffcce5, #d8d7ff, #c9edff);
+        }
+
+        .navigation a {
             display: inline-block;
-            background-color: #ffffff;
-            color: #060F8F !important;
+            background: rgba(255,255,255,0.9);
+            color: #8b70a8;
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
-            padding: 6px 16px;
-            margin: 0 3px;
-            border-radius: 20px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 
-                        inset 0 1px 1px rgba(255, 255, 255, 0.9);
-            transition: all 0.2s ease;
+            padding: 9px 18px;
+            margin: 4px;
+            border-radius: 25px;
+            box-shadow: 0 3px 8px rgba(120,100,150,0.12);
+            transition: all 0.3s ease;
         }
 
-        td[bgcolor="8FBBFF"] a: {
+        .navigation a:hover {
+            background: linear-gradient(135deg, #ffb8dc, #d5c8ff, #bceaff);
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
 
-        td[width="75%"] {
-            padding: 25px !important;
-            background-color: white !important;
+        .content {
+            width: 72%;
+            padding: 30px;
+            background-color: #fffdfd;
+            vertical-align: top;
+            line-height: 1.8;
         }
 
-        td[width="75%"] h3 {
+        .content h2 {
+            color: #b47ba9;
             margin-top: 0;
-            color: #1a202c;
+            border-bottom: 2px dashed #e8c9e7;
+            padding-bottom: 10px;
         }
 
-        td[width="75%"] a {
-            color: #0000ee;
+        .content h3 {
+            color: #9b86bd;
+        }
+
+        .content p {
+            text-align: justify;
+        }
+
+        .news-image {
+            display: block;
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 18px;
+            box-shadow: 0 5px 15px rgba(150,120,170,0.2);
+        }
+
+        .news-link {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 8px 5px 0 0;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #ffcce5, #d8d7ff, #c9edff);
+            color: #806493 !important;
+            text-decoration: none !important;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .news-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(150,120,170,0.2);
+        }
+
+        .sidebar {
+            width: 28%;
+            padding: 25px;
+            vertical-align: top;
+            background: linear-gradient(180deg, #f2e8ff, #e4f5ff, #ffe8f4);
+            border-left: 1px solid #f0e0f0;
+        }
+
+        .sidebar h3 {
+            color: #a27bb5;
+            margin-top: 0;
+        }
+
+        .sidebar p {
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .sidebar a {
+            display: inline-block;
+            color: #8b70a8;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .sidebar a:hover {
+            color: #d17eaf;
             text-decoration: underline;
         }
 
-        td[bgcolor="lightgrey"] {
-            background-color: lightgrey !important;
-            padding: 20px !important;
-            border-left: 1px solid #ccc !important;
+        .footer {
+            padding: 18px;
+            text-align: center;
+            background: linear-gradient(90deg, #ffd8eb, #e4ddff, #d4f1ff);
+            color: #8c76a3;
+            font-size: 13px;
+            letter-spacing: 0.5px;
         }
 
-        td[bgcolor="lightgrey"] p {
-            font-weight: bold;
-            margin-top: 0;
-        }
+        @media (max-width: 600px) {
+            body {
+                padding: 15px 8px;
+            }
 
-        tr:last-child td  {
-            background-color: BFDDE3 !important;
-            padding: 12px 15px !important;
-        }
-    </style> !important;
-            padding: 12px 15px !important;
+            .header {
+                padding: 30px 15px;
+            }
+
+            .header h1 {
+                font-size: 27px;
+            }
+
+            .content,
+            .sidebar {
+                display: block;
+                width: 100%;
+                padding: 22px;
+            }
+
+            .sidebar {
+                border-left: none;
+                border-top: 1px solid #f0e0f0;
+            }
+
+            .navigation a {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
         }
     </style>
-    <title>kegiatan</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
-<body bgcolor="darkgrey" background="images/background.svg">
-    <!-- Halaman web tanpa CSS. Murni hanya memakai HTML -->
-    <p>&nbsp;</p>
-    <table border="1" width="800px" cellpadding="12px" align="center" bgcolor="white">
+<body>
+    <table>
         <tr>
-            <td bgcolor="72A8BA">
-                <h3 align="center">Berita 2</h3>
+            <td colspan="2" class="header">
+                <h1>Website Tania</h1>
+                <p>Tania is here to help you!</p>
+                <div class="decoration">☁ ✧ ♡ ✧ ☁</div>
             </td>
         </tr>
+
         <tr>
-          <td>
-            <ol>
-            <p>Lifter putra Indonesia Rahmat Erwin Abdullah melakukan angkatan snatch pada final kelas 75 kilogram angkat besi Asian Games 2026 di Nagoya City Trade and Industry Center, Nagoya, Aichi, Jepang, Sabtu (26/9/2026).</p>
-                <head>
-    <title>kegiatan</title>
-   <img src="lifter.webp" width=250 height=200>
-                    <p>Rahmat Erwin Abdullah meraih medali emas setelah berada di posisi pertama sekaligus memecahkan rekor dunia kelas 75 kilogram untuk total angkatan 366 kilogram dan clean and jerk 206 kilogram</p>
-            </font>
+            <td colspan="2" class="navigation">
+                <a href="index.html">⌂ Beranda</a>
+                <a href="tentang saya.html">♡ Tentang Saya</a>
+                <a href="kegiatan.html">✿ Kegiatan</a>
+                <a href="kontak saya.html">✉ Kontak Saya</a>
             </td>
         </tr>
+
         <tr>
-            <td colspan="2" bgcolor="A4CEDE">
-                               <a href="https://www.antaranews.com/foto/5759885/lifter-indonesia-rahmat-erwin-abdullah-pecahkan-rekor-dunia-kelas-75kg">Lifter Indonesia Rahmat Erwin Abdullah Pecahkan Rekor Dunia</a>
-                <a href="index.html">Kembali ke Beranda.</a> 
+            <td class="content">
+                <h2>♡ Berita 2 ♡</h2>
+
+                <p><small>Sabtu, 26 September 2026</small></p>
+
+                <h3>
+                    Lifter Indonesia Rahmat Erwin Abdullah Pecahkan Rekor Dunia
+                </h3>
+
+                <p>
+                    Lifter putra Indonesia Rahmat Erwin Abdullah melakukan
+                    angkatan snatch pada final kelas 75 kilogram angkat besi
+                    Asian Games 2026 di Nagoya City Trade and Industry Center,
+                    Nagoya, Aichi, Jepang, Sabtu (26/9/2026).
+                </p>
+
+                <img
+                    src="lifter.webp"
+                    alt="Lifter Indonesia Rahmat Erwin Abdullah"
+                    class="news-image"
+                >
+
+                <p>
+                    Rahmat Erwin Abdullah meraih medali emas setelah berada
+                    di posisi pertama sekaligus memecahkan rekor dunia kelas
+                    75 kilogram untuk total angkatan 366 kilogram dan clean
+                    and jerk 206 kilogram.
+                </p>
+
+                <a
+                    class="news-link"
+                    href="https://www.antaranews.com/foto/5759885/lifter-indonesia-rahmat-erwin-abdullah-pecahkan-rekor-dunia-kelas-75kg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    ♡ Baca Berita Selengkapnya ♡
+                </a>
+
+                <a class="news-link" href="index.html">
+                    ← Kembali ke Beranda
+                </a>
+            </td>
+
+            <td class="sidebar">
+                <h3>୨୧ Tentang Website</h3>
+
+                <p>
+                    Selamat datang di website Tania! Website ini berisi
+                    informasi tentang saya, kegiatan, dan berita menarik
+                    lainnya.
+                </p>
+
+                <h3>୨୧ Link Favorit</h3>
+
+                <p>
+                    <a href="https://www.smkn1-tng.sch.id/" target="_blank">
+                        ♡ SMKN 1 Tangerang
+                    </a>
+                </p>
+
+                <p>
+                    <a href="https://www.wikipedia.org/" target="_blank">
+                        ♡ Wikipedia
+                    </a>
+                </p>
+
+                <h3>୨୧ Catatan</h3>
+
+                <p>
+                    Semangat terus dalam meraih prestasi dan jangan pernah
+                    menyerah untuk mencapai cita-cita!
+                </p>
+
+                <p>☁ Cotton Candy ☁</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" class="footer">
+                ♡ © Copyright Arianna Nc, 2026. Made with love by Tania ♡
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
